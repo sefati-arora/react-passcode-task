@@ -15,6 +15,30 @@ function PassCode()
     {
         try
         {
+            if(!currentPassCode)
+            {
+               Swal.fire({
+                icon:"info",
+                text:"PLEASE ENTER YOUR CURRENT PASSCODE!"
+               })
+               return;
+            }
+            if(!newPassCode)
+            {
+                Swal.fire({
+                    icon:"info",
+                    text:"PLEASE ENTER YOUR NEW PASSCODE!"
+                })
+                return;
+            }
+            if(!confirmPassCode)
+            {
+                Swal.fire({
+                    icon:"info",
+                    text:"PLEASE ENTER YOUR CONFIRM PASSCODE!"
+                })
+                return;
+            }
           const data={currentPassCode,newPassCode,confirmPassCode}
           const response=await postData(ApiEndPoint.EditPasscode,data)
           console.log(response)

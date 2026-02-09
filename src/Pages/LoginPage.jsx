@@ -16,6 +16,24 @@ function LoginPage()
     {
        try
     {
+        if(!email)
+        {
+            Swal.fire({
+                icon:"info",
+                title:"REQUIRED!",
+                text:"PLEASE ENTER EMAIL FIRST!"
+            })
+            return;
+        }
+        if(!password)
+        {
+            Swal.fire({
+                icon:"info",
+                title:"REQUIRED",
+                text:"PLEASE ENTER PASSWORD FIRST!"
+            })
+            return;
+        }
         const data={email,password}
        const response=await postData(ApiEndPoint.adminLogin,data)
        console.log(response)

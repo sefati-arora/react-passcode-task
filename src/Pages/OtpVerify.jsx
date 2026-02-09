@@ -14,6 +14,13 @@ function OtpVerify()
     {  
         try
         {
+            if(!email)
+            {
+                Swal.fire({
+                    icon:"error",
+                    text:"EMAIL NOT FOUND!"
+                })
+            }
            const response = await postData( `${ApiEndPoint.otpVerify}/${email}`,
       { otp });
            console.log(response)
