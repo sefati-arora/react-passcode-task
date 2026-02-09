@@ -1,0 +1,76 @@
+/* Sidebar container */
+.side-container {
+  width: 240px;
+  height: 100vh;
+  background: linear-gradient(180deg, #437bd4, #031235);
+  color: #e5e7eb;
+  padding: 20px 0;
+  position: fixed;
+  left: 0;
+  top: 64px;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Menu list */
+.side-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Menu items */
+.side-container ul li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+.side-container ul li a
+{
+  text-decoration: none;
+  color:white
+}
+/* Icon styling */
+.side-container ul li svg {
+  color: #94a3b8;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.side-container ul li:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-left: 4px solid #38bdf8;
+  color: #ffffff;
+}
+
+.side-container ul li:hover svg {
+  color: #38bdf8;
+}
+
+/* Active state (optional) */
+.side-container ul li.active {
+  background: rgba(56, 189, 248, 0.15);
+  border-left: 4px solid #38bdf8;
+  color: #ffffff;
+}
+
+.side-container ul li.active svg {
+  color: #38bdf8;
+}
+
+/* Responsive (mobile) */
+@media (max-width: 768px) {
+  .side-container {
+    width: 200px;
+  }
+
+  .side-container ul li {
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+}

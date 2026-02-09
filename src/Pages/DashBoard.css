@@ -1,0 +1,42 @@
+.dash-container
+{
+    height:800px;
+    width:1733px;
+    margin-top: -26px;
+    margin-left:-25px;
+}
+.dash-data
+{
+    height:250px;
+    width:1600px;
+    margin-left: 40px;
+}
+.box1
+{
+    margin-top: 60px;
+   height:156px;
+   width:277px;
+   border:transparent;
+   margin-left: 140px;
+   font-size: larger;
+   font-weight: bolder;
+   padding-top: 12px;
+   padding-left: 108px;
+   border-radius: 5px;
+   background-color: rgb(119, 63, 132);
+}
+.box2
+{
+      margin-top: -157px;
+   height:156px;
+   width:277px;
+   margin-left: 635px;
+   border:transparent;
+    font-size: larger;
+   font-weight: bolder;
+   padding-top: 12px;
+   padding-left: 108px;
+   border-radius: 5px;
+   background-color: rgb(119, 63, 132);
+  
+}

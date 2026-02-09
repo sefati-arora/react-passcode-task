@@ -1,0 +1,72 @@
+/* Container */
+.booking-container {
+  padding: 30px;
+  background: #f4f6f9;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Table wrapper */
+.booking-data {
+  width: 100%;
+  max-width: 1200px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+}
+
+/* Table styling */
+.booking-data table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+/* Table header */
+.booking-data thead {
+  background-color: #2c3e50;
+  color: #ffffff;
+}
+
+.booking-data th {
+  padding: 14px 12px;
+  text-align: left;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* Table body */
+.booking-data td {
+  padding: 12px;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Row hover effect */
+.booking-data tbody tr:hover {
+  background-color: #f1f7ff;
+  transition: 0.3s ease;
+}
+
+/* Alternate row background */
+.booking-data tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .booking-data {
+    padding: 10px;
+  }
+
+  .booking-data th,
+  .booking-data td {
+    font-size: 12px;
+    padding: 8px;
+  }
+}

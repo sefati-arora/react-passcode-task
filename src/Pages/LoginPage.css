@@ -1,0 +1,71 @@
+.login-container
+{
+    height:870px;
+    width:2056px;
+  margin-top: -6px;
+  margin-left: -8px;
+  position: fixed;
+   background: linear-gradient(180deg, #d6619c, #031235);
+}
+.login-data
+{
+     height:440px;
+    width:499px;
+    border:transparent;
+     margin-left: 270px;
+   margin-top: 100px;
+   background-color: beige;
+   border-radius: 5px;
+   padding-top: 20px;
+}
+.login-page
+{
+text-align: center;
+font-weight: bolder;
+margin-top: 69px;
+}
+.email-data
+{
+    margin-left: 53px;
+    font-weight: bold;
+    margin-top: 64px;
+}
+.password-data
+{
+     margin-left: 50px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+.email-input
+{
+    height:25px;
+    width:254px;
+    float: right;
+    margin-top: -43px;
+    margin-right: 91px;
+    border:none;
+    border-bottom: 1px solid black;
+    background-color: beige;
+}
+.password-input
+{
+    height:25px;
+    width:254px;
+    float: right;
+    margin-top: -43px;
+    margin-right: 50px;
+    border:none;
+    border-bottom: 1px solid black;
+    background-color: beige;
+}
+.btn-save
+{
+    height:40px;
+    width:233px;
+    border:transparent;
+    margin-left: 99px;
+    margin-top: 70px;
+    border-radius: 34px;
+      background: linear-gradient(180deg, #d6619c, #1a08e5);
+      color:white;
+}

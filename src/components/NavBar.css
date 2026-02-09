@@ -1,0 +1,147 @@
+
+
+/* Notification icon */
+.notify {
+  position: relative;
+  margin-right: 28px;
+  cursor: pointer;
+  color: #475569;
+  transition: color 0.3s ease;
+}
+
+.notify:hover {
+  color: #0ea5e9;
+}
+
+/* Admin section */
+.Admin-controller {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #334155;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Admin icon */
+.Admin-controller svg {
+  color: #64748b;
+}
+
+/* Dropdown select */
+.select-row {
+  margin-left: 10px;
+  padding: 6px 30px 6px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #cbd5f5;
+  background-color: #f8fafc;
+  color: #334155;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Hover & focus */
+.select-row:hover {
+  border-color: #38bdf8;
+}
+
+.select-row:focus {
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2);
+}
+
+/* Dropdown options */
+.select-row option {
+  background: #ffffff;
+  color: #334155;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-bar {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 16px;
+  }
+
+  .Admin-controller {
+    font-size: 14px;
+  }
+}
+
+/* Root layout */
+.admin-layout {
+  min-height: 100vh;
+  background: #f1f5f9;
+}
+
+/* Body holds sidebar + content */
+.admin-body {
+  display: flex;
+}
+
+/* Navbar alignment */
+.nav-bar {
+  height: 64px;
+  position: fixed;
+  top: 0;
+  left: -5px;
+  right: 0;
+  background: #ed87e8;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Main page content */
+.admin-content {
+  margin-left: 240px;
+  margin-top: 64px;
+  padding: 24px;
+  width: calc(100% - 240px);
+  min-height: calc(100vh - 64px);
+  background: #f8fafc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .side-container {
+    width: 200px;
+  }
+
+  .nav-bar {
+    left: 200px;
+  }
+
+  .admin-content {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+  }
+}
+
+@media (max-width: 640px) {
+  .side-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .nav-bar {
+    left: 0;
+  }
+
+  .admin-body {
+    flex-direction: column;
+  }
+
+  .admin-content {
+    margin-left: 0;
+    width: 100%;
+  }
+}

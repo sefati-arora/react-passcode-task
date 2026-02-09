@@ -1,0 +1,75 @@
+/* Main container */
+.user-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Table wrapper */
+.user-data {
+  width: 100%;
+  max-width: 1000px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+}
+
+/* Table styling */
+.user-data table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Table header */
+.user-data thead {
+  background-color: #4a90e2;
+  color: #ffffff;
+}
+
+.user-data th {
+  padding: 14px 12px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Table rows */
+.user-data td {
+  padding: 12px;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Row hover effect */
+.user-data tbody tr:hover {
+  background-color: #f1f7ff;
+  transition: 0.3s ease;
+}
+
+/* Zebra striping */
+.user-data tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .user-data {
+    padding: 15px;
+  }
+
+  .user-data th,
+  .user-data td {
+    font-size: 13px;
+    padding: 10px;
+  }
+}

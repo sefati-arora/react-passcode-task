@@ -1,0 +1,87 @@
+.passcode-container
+{
+    height:870px;
+    width:2056px;
+  margin-top: -6px;
+  margin-left: -8px;
+  border:1px solid black;
+   background: linear-gradient(180deg, #0c52c2, #2b2a38);
+}
+.passcode-data
+{
+    height:400px;
+    width:510px;
+    border:transparent;
+    margin-left: 390px;
+    margin-top: 122px;
+    background-color: azure;
+    border-radius: 55px 2px 99px 1px ;
+}
+.current-data
+{
+    margin-left: 20px;
+    margin-top: 41px;
+    font-weight: bold;
+}
+.pass-code
+{
+    text-align: center;
+font-weight: bolder;
+margin-top: 69px;
+padding-top: 27px;
+}
+.current-input
+{
+     height:25px;
+    width:224px;
+    float: right;
+    margin-top: -44px;
+    margin-right:36px;
+    border:none;
+    border-bottom: 1px solid black;
+}
+.new-data
+{
+     margin-left: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.new-input
+{
+    height:25px;
+    width:224px;
+    float: right;
+    margin-top: -44px;
+    margin-right:36px;
+    border:none;
+    border-bottom: 1px solid black;
+}
+.confirm-data
+{
+     margin-left: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.confirm-input
+{
+   height:25px;
+    width:224px;
+    float: right;
+    margin-top: -44px;
+    margin-right:36px;
+    border:none;
+    border-bottom: 1px solid black;
+}
+.btn-submit
+{
+    height:36px;
+    width:249px;
+    margin-left: 129px;
+    margin-top: 44px;
+    border-radius: 20px;
+     background: linear-gradient(180deg, #dfcb12, #2b2a38);
+     color:rgb(12, 12, 12);
+     font-size: medium;
+     font-weight: bolder;
+     border:transparent;
+}
