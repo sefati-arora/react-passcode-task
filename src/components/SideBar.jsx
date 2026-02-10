@@ -17,7 +17,7 @@ function SideBar()
             navigate('/user')
             return;
         }
-        const{value:passCode}=await Swal.fire(
+        const result=await Swal.fire(
             {
                 title:"ENTER PASSCODE",
                 input:"password",
@@ -25,6 +25,7 @@ function SideBar()
                 confirmButtonText:"submit"
             }
         );
+        const passCode=result.value;
         
         try
         {
