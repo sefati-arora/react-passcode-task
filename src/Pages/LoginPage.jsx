@@ -37,6 +37,10 @@ function LoginPage()
         const data={email,password}
        const response=await postData(ApiEndPoint.adminLogin,data)
        console.log(response)
+       console.log(response.admin.step);
+       console.log(response.status)
+        const step=response.admin.step
+        console.log(step)
        if(response.status == 200)
        {
         login(response);
@@ -45,16 +49,31 @@ function LoginPage()
             title:"SUCCESSFULL!",
             text:"SUCCESSFYLLY"
          })
+        if(step==1)
+       {
          navigate('/pass')
+       }
+       else if(step==2)
+       {
+         navigate(`/otp/${email}`)
+       }
+       else if(step==3)
+       {
+        navigate("/Dash")
        }
        else
        {
+         navigate('/')
+       }
+       }
+     else
+     {
         Swal.fire({
             icon:"error",
             title:"ERROR",
-            text:"ERROR"
+            text:"ERROR!!!!"
         })
-       }
+     }
     }
     catch(error)
     {

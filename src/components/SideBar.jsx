@@ -1,4 +1,4 @@
- import { LayoutDashboard, User,CalendarCheck,Repeat, ShoppingCart, DollarSign, HelpCircle } from "lucide-react";
+ import { LayoutDashboard, User,CalendarCheck,Repeat, ShoppingCart, DollarSign, HelpCircle,Undo } from "lucide-react";
 import './Side.css';
 import Swal from "sweetalert2";
 import useApi from "../components/useApi";
@@ -26,7 +26,6 @@ function SideBar()
             }
         );
         const passCode=result.value;
-        
         try
         {
             const response=await postData(ApiEndPoint.verifyPasscode,
@@ -100,6 +99,7 @@ function SideBar()
                 <li><Repeat size={18}/>Subscription</li>
                 <li><ShoppingCart size={18}/>Orders</li>
                 <li><DollarSign size={18}/>Revenue</li>
+                <li><Undo size={18}/><Link to="/pass">PassCode</Link></li>
                 <li><HelpCircle size={18}/>FAQ</li>
             </ul>
         </div>
