@@ -1,14 +1,16 @@
-/* Sidebar container */
+/* Sidebar Container */
 .side-container {
-  width: 240px;
+  width: 250px;
   height: 100vh;
-  background: linear-gradient(180deg, #437bd4, #031235);
-  color: #e5e7eb;
-  padding: 20px 0;
+      background: linear-gradient(190deg, #010101f0, #6d7477);
+  color: #e2e8f0;
+  padding: 25px 0;
   position: fixed;
   left: 0;
   top: 64px;
-  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 6px 0 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
 }
 
 /* Menu list */
@@ -22,55 +24,96 @@
 .side-container ul li {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 14px 24px;
+  gap: 15px;
+  padding: 14px 26px;
   font-size: 15px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-left: 4px solid transparent;
+  position: relative;
+  border-radius: 8px;
+  margin: 6px 12px;
 }
-.side-container ul li a
-{
+
+/* Link */
+.side-container ul li a {
   text-decoration: none;
-  color:white
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
 }
+
 /* Icon styling */
 .side-container ul li svg {
   color: #94a3b8;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-/* Hover effect */
+/* Hover Effect */
 .side-container ul li:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-left: 4px solid #38bdf8;
-  color: #ffffff;
+  background: rgba(56, 189, 248, 0.12);
+  transform: translateX(5px);
 }
 
 .side-container ul li:hover svg {
   color: #38bdf8;
 }
 
-/* Active state (optional) */
+/* Left Active Indicator Animation */
+.side-container ul li::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: transparent;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.side-container ul li:hover::before {
+  background: #38bdf8;
+}
+
+/* Active State */
 .side-container ul li.active {
-  background: rgba(56, 189, 248, 0.15);
-  border-left: 4px solid #38bdf8;
-  color: #ffffff;
+  background: rgba(56, 189, 248, 0.18);
+}
+
+.side-container ul li.active::before {
+  background: #38bdf8;
 }
 
 .side-container ul li.active svg {
   color: #38bdf8;
 }
 
-/* Responsive (mobile) */
+/* Smooth Scroll if long menu */
+.side-container {
+  overflow-y: auto;
+}
+
+/* Scrollbar styling */
+.side-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.side-container::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .side-container {
-    width: 200px;
+    width: 210px;
   }
 
   .side-container ul li {
     font-size: 14px;
-    padding: 12px 20px;
+    padding: 12px 18px;
   }
 }

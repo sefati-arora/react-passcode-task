@@ -5,6 +5,7 @@ import useApi from "../components/useApi";
 import ApiEndPoint from "../components/ApiEndPoint";
 import Swal from "sweetalert2";
 import "./LoginPage.css";
+import { EyeClosed, LockIcon, Mail, MailCheck } from "lucide-react";
 function LoginPage()
 {
     const[email,setEmail]=useState("")
@@ -80,12 +81,15 @@ function LoginPage()
         <>
         <div className="login-container">
             <div className="login-data">
-                <h1 className="login-page">LOGIN PAGE!</h1>
-                <h3 className="email-data">EMAIL:</h3>
+                <div className="pic"><img  src="/login.png"/></div>
+                <div className="login-page">
+                    <h1>LOGIN PAGE!</h1>
+                <h3 className="email-data"><MailCheck size={20}/>EMAIL:</h3>
                 <input className="email-input" type="text" placeholder="EMAIL:" value={email} onChange={(e)=>setEmail(e.target.value)}/>
-                <h3 className="password-data">PASSWORD:</h3>
+                <h3 className="password-data"><LockIcon size={20}/>PASSWORD:</h3>
                 <input className="password-input" type="password" placeholder="PASSWORD" value={password} onChange={(e)=>setPassword(e.target.value)}/>
                 <button className="btn-save" onClick={loginPage}>SAVE</button>
+            </div>
             </div>
         </div>
         </>

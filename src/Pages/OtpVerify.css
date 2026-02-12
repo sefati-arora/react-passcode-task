@@ -1,63 +1,100 @@
-.otp-container
-{
-    height:870px;
-    width:2056px;
-  margin-top: -6px;
-  margin-left: -8px;
+/* Full Page Background */
+.otp-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ background: linear-gradient(110deg, #d87171e0,#013C58);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.otp-data
-{
-   height:538px;
-    width:510px;
-    border:transparent;
-    margin-left: 600px;
-    margin-top: 122px;
-    background: linear-gradient(130deg, #edf024, #372af2);
-    border-radius: 5px;
+
+/* OTP Card */
+.otp-data {
+  width: 380px;
+  padding: 40px 30px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
 }
-.otp-verification
-{
-text-align: center;
-font-weight: bolder;
-margin-top: 69px;
-padding-top: 18px;
+
+/* Heading */
+.otp-verification {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
 }
-.otp-here
-{
-    margin-left: 20px;
-    margin-top: 41px;
-    font-weight: bold;
-    color:#666568
+
+/* Sub text */
+.otp-here {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 30px;
 }
-.otp-input
-{
-      height:25px;
-    width:264px;
-    margin-top: -44px;
-    margin-left: 92px;
-    border:none;
-    border-bottom: 1px solid black;
-    letter-spacing: 10px;
-    font-size: larger;
-    background-color:transparent;
+
+.otp-box-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
 }
-.btn-data
-{
-     height:36px;
-    width:249px;
-    margin-left: 129px;
-    margin-top: 44px;
-    border-radius: 20px;
-     background: linear-gradient(180deg, #f14aca, #7067ef);
-     color:rgb(12, 12, 12);
-     font-size: medium;
-     font-weight: bolder;
-     border:transparent;
+
+/* Individual OTP Box */
+.otp-box {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #764ba2;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  outline: none;
+  transition: 0.3s ease;
 }
-.image img
-{
-    height:111px;
-    width:154px;
-    margin-left: 150px;
-    margin-top: 65px;
+
+/* Focus Effect */
+.otp-box:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 10px rgba(102, 126, 234, 0.4);
+  transform: scale(1.05);
+}
+
+/* Button */
+.btn-data {
+  margin-top: 30px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+ background: linear-gradient(110deg, #d87171e0,#013C58);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-data:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(118, 75, 162, 0.4);
+}
+
+/* Image */
+.image img {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

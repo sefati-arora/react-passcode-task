@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate} from "react-router-dom";
+import { ShieldCheck,LockKeyhole,KeyRound,CheckCircle2,UserCircle} from "lucide-react";
 import useApi from "../components/useApi";
 import ApiEndPoint from "../components/ApiEndPoint";
 import Swal from "sweetalert2";
@@ -75,12 +76,13 @@ function PassCode()
         <>
         <div className="passcode-container">
             <div className="passcode-data">
-                <h1 className="pass-code">CHANGE PASSCODE!</h1>
-                <h3 className="current-data">CURRENT PASSCODE:</h3>
+                <div className="admin"><img src="./admin.png"/></div>
+                <h1 className="pass-code"><ShieldCheck size={28}/>CHANGE PASSCODE!</h1>
+                <h3 className="current-data"><LockKeyhole size={20}/>CURRENT PASSCODE:</h3>
                 <input className="current-input" type="text" placeholder="CURRENT PASSCODE" value={currentPassCode}  onChange={(e)=>setcurrent(e.target.value)}/>
-                <h3 className="new-data">NEW PASSCODE:</h3>
+                <h3 className="new-data"><KeyRound size={20}/>NEW PASSCODE:</h3>
                 <input className="new-input" type="text" placeholder="NEW PASSCODE" value={newPassCode} onChange={(e)=>setNew(e.target.value)}/>
-                <h3 className="confirm-data">CONFIRM PASSCODE:</h3>
+                <h3 className="confirm-data"><CheckCircle2 size={20}/>CONFIRM PASSCODE:</h3>
                 <input className="confirm-input" type="text" placeholder="CONFIRM PASSCODE" value={confirmPassCode} onChange={(e)=>setConfirm(e.target.value)}/>
                 <button className="btn-submit" onClick={changePasscode}>SUBMIT</button>
             </div>

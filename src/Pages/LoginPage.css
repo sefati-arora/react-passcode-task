@@ -1,71 +1,86 @@
-.login-container
-{
-    height:870px;
-    width:2056px;
-  margin-top: -6px;
-  margin-left: -8px;
-  position: fixed;
-   background: linear-gradient(180deg, #d6619c, #031235);
+/* Full Screen Background */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #d6619c, #031235);
+  font-family: Arial, Helvetica, sans-serif;
 }
-.login-data
-{
-     height:440px;
-    width:499px;
-    border:transparent;
-     margin-left: 270px;
-   margin-top: 100px;
-   background-color: beige;
-   border-radius: 5px;
-   padding-top: 20px;
+
+/* Main Card */
+.login-data {
+  width: 850px;
+  max-width: 95%;
+  background: #fff;
+  border-radius: 15px;
+  display: flex;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
-.login-page
-{
-text-align: center;
-font-weight: bolder;
-margin-top: 69px;
+
+/* Left Image Section */
+.pic {
+  flex: 1;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.email-data
+.pic img
 {
-    margin-left: 53px;
-    font-weight: bold;
-    margin-top: 64px;
+    width:193px;
 }
-.password-data
-{
-     margin-left: 50px;
-    font-weight: bold;
-    margin-top: 50px;
+
+/* Right Login Form */
+.login-page {
+  flex: 1;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.email-input
-{
-    height:25px;
-    width:254px;
-    float: right;
-    margin-top: -43px;
-    margin-right: 91px;
-    border:none;
-    border-bottom: 1px solid black;
-    background-color: beige;
+
+/* Form Labels */
+.email-data,
+.password-data {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
-.password-input
-{
-    height:25px;
-    width:254px;
-    float: right;
-    margin-top: -43px;
-    margin-right: 50px;
-    border:none;
-    border-bottom: 1px solid black;
-    background-color: beige;
+
+/* Input Fields */
+.email-input,
+.password-input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+  font-size: 14px;
 }
-.btn-save
-{
-    height:40px;
-    width:233px;
-    border:transparent;
-    margin-left: 99px;
-    margin-top: 70px;
-    border-radius: 34px;
-      background: linear-gradient(180deg, #d6619c, #1a08e5);
-      color:white;
+
+.email-input:focus,
+.password-input:focus {
+  border-bottom: 2px solid #d6619c;
+}
+
+/* Button */
+.btn-save {
+  margin-top: 40px;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #d6619c, #1a08e5);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  width:299px;
+}
+
+.btn-save:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }

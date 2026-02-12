@@ -1,56 +1,107 @@
+/* ========== ROOT LAYOUT ========== */
+.admin-layout {
+  min-height: 100vh;
+  background: #f1f5f9;
+  font-family: 'Segoe UI', sans-serif;
+}
 
+.admin-body {
+  display: flex;
+}
 
-/* Notification icon */
+/* ========== NAVBAR ========== */
+.nav-bar {
+  height: 64px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color:#d87171e0;
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 30px;
+ box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* ========== NOTIFICATION ICON ========== */
 .notify {
   position: relative;
-  margin-right: 28px;
+  margin-right: 30px;
   cursor: pointer;
   color: #475569;
-  transition: color 0.3s ease;
+  font-size: 20px;
+  transition: all 0.3s ease;
 }
 
 .notify:hover {
   color: #0ea5e9;
+  transform: translateY(-2px);
 }
 
-/* Admin section */
+/* Notification Badge */
+.notify::after {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 20px;
+}
+
+/* ========== ADMIN CONTROLLER ========== */
 .Admin-controller {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-weight: 600;
   color: #334155;
-  position: relative;
   cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.Admin-controller:hover {
+  background: rgba(14, 165, 233, 0.1);
 }
 
 /* Admin icon */
 .Admin-controller svg {
   color: #64748b;
+  transition: 0.3s ease;
 }
 
-/* Dropdown select */
+.Admin-controller:hover svg {
+  color: #0ea5e9;
+}
+
+/* ========== DROPDOWN SELECT ========== */
 .select-row {
-  margin-left: 10px;
-  padding: 6px 30px 6px 10px;
+  margin-left: 8px;
+  padding: 6px 28px 6px 12px;
   font-size: 14px;
-  border-radius: 6px;
-  border: 1px solid #cbd5f5;
-  background-color: #f8fafc;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
   color: #334155;
   cursor: pointer;
   outline: none;
   transition: all 0.3s ease;
 }
 
-/* Hover & focus */
 .select-row:hover {
   border-color: #38bdf8;
 }
 
 .select-row:focus {
   border-color: #0ea5e9;
-  box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
 }
 
 /* Dropdown options */
@@ -59,85 +110,33 @@
   color: #334155;
 }
 
-/* Responsive */
+/* ========== MAIN CONTENT AREA ========== */
+.admin-content {
+  margin-left: 250px;
+  margin-top: 64px;
+  padding: 30px;
+  width: calc(100% - 250px);
+  min-height: calc(100vh - 64px);
+  background: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width: 992px) {
+  .admin-content {
+    margin-left: 210px;
+    width: calc(100% - 210px);
+  }
+}
+
 @media (max-width: 768px) {
   .nav-bar {
-    width: 100%;
-    margin-left: 0;
     padding: 0 16px;
   }
 
   .Admin-controller {
     font-size: 14px;
-  }
-}
-
-/* Root layout */
-.admin-layout {
-  min-height: 100vh;
-  background: #f1f5f9;
-}
-
-/* Body holds sidebar + content */
-.admin-body {
-  display: flex;
-}
-
-/* Navbar alignment */
-.nav-bar {
-  height: 64px;
-  position: fixed;
-  top: 0;
-  left: -5px;
-  right: 0;
-  background: #ed87e8;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0 24px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-}
-
-/* Main page content */
-.admin-content {
-  margin-left: 240px;
-  margin-top: 64px;
-  padding: 24px;
-  width: calc(100% - 240px);
-  min-height: calc(100vh - 64px);
-  background: #f8fafc;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .side-container {
-    width: 200px;
-  }
-
-  .nav-bar {
-    left: 200px;
-  }
-
-  .admin-content {
-    margin-left: 200px;
-    width: calc(100% - 200px);
-  }
-}
-
-@media (max-width: 640px) {
-  .side-container {
-    position: relative;
-    width: 100%;
-    height: auto;
-  }
-
-  .nav-bar {
-    left: 0;
-  }
-
-  .admin-body {
-    flex-direction: column;
   }
 
   .admin-content {
