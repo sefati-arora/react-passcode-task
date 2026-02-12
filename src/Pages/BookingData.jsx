@@ -51,7 +51,7 @@ function BookingData() {
                 <tr key={index}>
                   <td>{index + 1}</td>
                   <td>{item.duration}</td>
-                  <td>{item.DateandTime}</td>
+                  <td>{item.DateAndTime}</td>
                   <td>{item.location}</td>
                   <td>{item.comment}</td>
                   <td>{item.latitude}</td>

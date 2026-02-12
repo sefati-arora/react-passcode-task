@@ -49,22 +49,14 @@ function LoginPage()
             title:"SUCCESSFULL!",
             text:"SUCCESSFYLLY"
          })
-        if(step==1)
-       {
-         navigate('/pass')
-       }
-       else if(step==2)
-       {
-         navigate(`/otp/${email}`)
-       }
-       else if(step==3)
-       {
-        navigate("/Dash")
-       }
-       else
-       {
-         navigate('/')
-       }
+         if(step==1)
+         {
+            navigate(`/otp/${email}`)
+         }
+         else
+         {
+            navigate('/Dash')
+         }
        }
      else
      {

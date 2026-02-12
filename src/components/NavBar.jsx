@@ -20,8 +20,11 @@ function NavBar() {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, logout!",
     });
-    console.log(">>>")
-     if (!result.isConfirmed) return;
+     if (!result.isConfirmed)
+       {
+         navigate('/Dash')
+         return;
+       }
      try
      {
        const response=await postData(ApiEndPoint.logOut)
@@ -60,16 +63,20 @@ function NavBar() {
           <select
             className="select-row"
             onChange={(e) => {
+            if (e.target.value) {
+                
+                navigate(e.target.value);
+                
+              }
               if(e.target.value=="logout")
               {
-                   handleLogout();
-                   return;
+                handleLogout();
               }
             }}
           >
             <option value="">SELECT</option>
             <option value="logout">Logout</option>
-            <option>Password Change</option>
+            <option value="/pass">PassCode Change</option>
             <option>Setting</option>
             <option>Profile Update</option>
             <option>Complete Profile</option>
