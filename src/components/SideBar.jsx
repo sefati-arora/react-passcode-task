@@ -29,7 +29,7 @@ function SideBar() {
       showCancelButton:true,
       confirmButtonText: "submit",
       cancelButtonText:"cancel",
-      cancelButtonColor:"#d33"
+      cancelButtonColor:"rgb(219, 72, 72)"
     });
     const passCode = result.value;
     try {

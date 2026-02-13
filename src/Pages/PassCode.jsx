@@ -50,7 +50,14 @@ function PassCode() {
         return;
       }
       const response = await postData(ApiEndPoint.EditPasscode, data);
-      console.log(response);  
+      console.log(response);
+      if(response.status==400)
+      {
+        Swal.fire({
+            icon:"info",
+            text:"CURRENT PASSCODE INVALID!"
+        })
+      }
       if (response.status == 200) {
         const email = response.update.email;
         console.log(email);

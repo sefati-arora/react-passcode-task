@@ -49,7 +49,7 @@ function DashBoard() {
       showCancelButton:true,
       confirmButtonText: "submit",
       cancelButtonText: "cancel",
-      cancelButtonColor: "#d33",
+      cancelButtonColor: "rgb(224, 79, 79)",
     });
     if(!result.isConfirmed) return;
     const passCode = result.value;
