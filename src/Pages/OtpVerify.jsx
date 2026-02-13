@@ -22,7 +22,7 @@ function OtpVerify() {
         otp,
       });
       console.log(response);
-      console.log(otp)
+      console.log(otp);
       if (response.status == 200) {
         navigate("/Dash");
       } else {
@@ -40,45 +40,38 @@ function OtpVerify() {
       });
     }
   };
-  const resendOtp=async()=>
-  {
-    try
-    {
-      console.log(email)
-      const otpResend=await postData(`${ApiEndPoint.resendOtp}/${email}`);
-      console.log(otpResend)
-      if(otpResend.status==200)
-      {
+  const resendOtp = async () => {
+    try {
+      console.log(email);
+      const otpResend = await postData(`${ApiEndPoint.resendOtp}/${email}`);
+      console.log(otpResend);
+      if (otpResend.status == 200) {
         Swal.fire({
-          icon:"success",
-          title:"SUCCESSFULLY!",
-          text:"RESEND OTP!"
-        })
-      }
-      else
-      {
+          icon: "success",
+          title: "SUCCESSFULLY!",
+          text: "RESEND OTP!",
+        });
+      } else {
         Swal.fire({
-          icon:"error",
-          title:"ERROR!",
-          text:"error"
-        })
+          icon: "error",
+          title: "ERROR!",
+          text: "error",
+        });
       }
-    }
-    catch(error)
-    {
+    } catch (error) {
       Swal.fire({
-        icon:"error",
-        title:"ERROR!",
-        text:"SERVER ERROR!"
-      })
+        icon: "error",
+        title: "ERROR!",
+        text: "SERVER ERROR!",
+      });
     }
-  }
+  };
   const handleChange = (e, index) => {
-  const value = e.target.value;
-  const newOtp = otp.split("");
-  newOtp[index] = value;
-  setOtp(newOtp.join(""));
-};
+    const value = e.target.value;
+    const newOtp = otp.split("");
+    newOtp[index] = value;
+    setOtp(newOtp.join(""));
+  };
   return (
     <>
       <div className="otp-container">
@@ -91,15 +84,35 @@ function OtpVerify() {
             VERIFICATION!
           </h1>
           <h3 className="otp-here">ENTER YOUR OTP HERE!</h3>
-          <div
-            className="otp-box-container"
-          >
-            <input type="text" maxLength="1" className="otp-box"onChange={(e)=>handleChange(e,0)} />
-            <input type="text" maxLength="1" className="otp-box" onChange={(e)=>handleChange(e,1)} />
-            <input type="text" maxLength="1" className="otp-box" onChange={(e)=>handleChange(e,2)} />
-            <input type="text" maxLength="1" className="otp-box"onChange={(e)=>handleChange(e,3)}  />
+          <div className="otp-box-container">
+            <input
+              type="text"
+              maxLength="1"
+              className="otp-box"
+              onChange={(e) => handleChange(e, 0)}
+            />
+            <input
+              type="text"
+              maxLength="1"
+              className="otp-box"
+              onChange={(e) => handleChange(e, 1)}
+            />
+            <input
+              type="text"
+              maxLength="1"
+              className="otp-box"
+              onChange={(e) => handleChange(e, 2)}
+            />
+            <input
+              type="text"
+              maxLength="1"
+              className="otp-box"
+              onChange={(e) => handleChange(e, 3)}
+            />
           </div>
-          <button className="btn-send" onClick={resendOtp}>Resend OTP</button>
+          <button className="btn-send" onClick={resendOtp}>
+            Resend OTP
+          </button>
           <button className="btn-data" onClick={OtpData}>
             SUBMIT
           </button>

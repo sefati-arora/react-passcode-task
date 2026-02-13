@@ -42,8 +42,6 @@ function BookingData() {
                 <th>DateAndTime</th>
                 <th>location</th>
                 <th>comment</th>
-                <th>latitude</th>
-                <th>longitude</th>
               </tr>
             </thead>
             <tbody>
@@ -54,8 +52,6 @@ function BookingData() {
                   <td>{item.DateAndTime}</td>
                   <td>{item.location}</td>
                   <td>{item.comment}</td>
-                  <td>{item.latitude}</td>
-                  <td>{item.longitude}</td>
                 </tr>
               ))}
             </tbody>

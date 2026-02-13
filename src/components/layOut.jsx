@@ -1,20 +1,20 @@
-import NavBar from "./navBar";
+import NavBar from "./NavBar";
 import SideBar from "./SideBar";
 import { Outlet } from "react-router-dom";
-import './NavBar.css';
+import "./NavBar.css";
 
 function Layout() {
   return (
     <>
-    <div className="admin-layout">
-      <NavBar />
-      <div className="admin-body">
-        <SideBar />
-        <div className="admin-content">
-          <Outlet />
+      <div className="admin-layout">
+        <NavBar />
+        <div className="admin-body">
+          <SideBar />
+          <div className="admin-content">
+            <Outlet />
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
 }

@@ -24,7 +24,6 @@
    padding-top: 12px;
    padding-left: 96px;
    border-radius: 19px;
-    color:rgb(45, 44, 44);
     background: linear-gradient(110deg, #d87171e0,#013C58);
 }
 .box1 img
@@ -45,6 +44,11 @@
     margin-top: -54px;
     padding-left: 13px;
 }
+.box1 a
+{
+    text-decoration: none;
+   color:rgb(45, 44, 44);
+}
 .box2
 {
       margin-top: -136px;
@@ -54,7 +58,6 @@
    border:transparent;
     font-size:xx-large;
    font-weight: bold;
-   color:rgb(45, 44, 44);
    padding-top: 12px;
    padding-left: 88px;
    border-radius: 19px;
@@ -67,6 +70,11 @@
     margin-left: -76px;
     margin-top: 21px;
     filter: blur(1px);
+}
+.box2 a
+{
+    text-decoration: none;
+      color:rgb(45, 44, 44);
 }
 .box2-data
 {

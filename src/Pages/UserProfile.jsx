@@ -46,7 +46,7 @@ function UserProfile() {
             <tbody>
               {user.map((item, index) => (
                 <tr key={index}>
-                    <td>{index+1}</td>
+                  <td>{index + 1}</td>
                   <td>{item.firstName}</td>
                   <td>{item.email}</td>
                   <td>{item.phoneNumber}</td>

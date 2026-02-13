@@ -11,15 +11,15 @@ const useApi = () => {
       const response = await fetch(`${endpoint}`, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`, 
+          Authorization: `Bearer ${token}`,
         },
       });
       const data = await response.json();
       setLoading(false);
-       return {
-      status: response.status,
-      ...data,
-    };
+      return {
+        status: response.status,
+        ...data,
+      };
     } catch (err) {
       setError(err.message);
       setLoading(false);
@@ -46,9 +46,9 @@ const useApi = () => {
       const data = await response.json();
       setLoading(false);
       return {
-      status: response.status,
-      ...data,
-    };
+        status: response.status,
+        ...data,
+      };
     } catch (err) {
       setError(err.message);
       setLoading(false);
