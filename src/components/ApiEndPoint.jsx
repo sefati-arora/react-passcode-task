@@ -10,6 +10,7 @@ const ApiEndPoint=
      bookingFetch:`${API_BASE_URL}/api/bookingFetch`,
      EditPasscode:`${API_BASE_URL}/api/EditPasscode`,
      DashBoardData:`${API_BASE_URL}/api/DashBoardData`,
-     verifyPasscode:`${API_BASE_URL}/api/verifyPasscode`
+     verifyPasscode:`${API_BASE_URL}/api/verifyPasscode`,
+     resendOtp:`${API_BASE_URL}/api/resendOtp`
 }
 export default ApiEndPoint;

@@ -24,11 +24,6 @@ function OtpVerify() {
       console.log(response);
       console.log(otp)
       if (response.status == 200) {
-        Swal.fire({
-          icon: "success",
-          title: "SUCCESS",
-          text: response.message,
-        });
         navigate("/Dash");
       } else {
         Swal.fire({
@@ -45,6 +40,39 @@ function OtpVerify() {
       });
     }
   };
+  const resendOtp=async()=>
+  {
+    try
+    {
+      console.log(email)
+      const otpResend=await postData(`${ApiEndPoint.resendOtp}/${email}`);
+      console.log(otpResend)
+      if(otpResend.status==200)
+      {
+        Swal.fire({
+          icon:"success",
+          title:"SUCCESSFULLY!",
+          text:"RESEND OTP!"
+        })
+      }
+      else
+      {
+        Swal.fire({
+          icon:"error",
+          title:"ERROR!",
+          text:"error"
+        })
+      }
+    }
+    catch(error)
+    {
+      Swal.fire({
+        icon:"error",
+        title:"ERROR!",
+        text:"SERVER ERROR!"
+      })
+    }
+  }
   const handleChange = (e, index) => {
   const value = e.target.value;
   const newOtp = otp.split("");
@@ -71,6 +99,7 @@ function OtpVerify() {
             <input type="text" maxLength="1" className="otp-box" onChange={(e)=>handleChange(e,2)} />
             <input type="text" maxLength="1" className="otp-box"onChange={(e)=>handleChange(e,3)}  />
           </div>
+          <button className="btn-send" onClick={resendOtp}>Resend OTP</button>
           <button className="btn-data" onClick={OtpData}>
             SUBMIT
           </button>

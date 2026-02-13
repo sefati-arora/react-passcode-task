@@ -5,7 +5,7 @@ import useApi from "../components/useApi";
 import ApiEndPoint from "../components/ApiEndPoint";
 import Swal from "sweetalert2";
 import "./LoginPage.css";
-import { EyeClosed, LockIcon, Mail, MailCheck } from "lucide-react";
+import {LockIcon,MailCheck } from "lucide-react";
 function LoginPage()
 {
     const[email,setEmail]=useState("")
@@ -38,18 +38,11 @@ function LoginPage()
         const data={email,password}
        const response=await postData(ApiEndPoint.adminLogin,data)
        console.log(response)
-       console.log(response.admin.step);
-       console.log(response.status)
         const step=response.admin.step
         console.log(step)
        if(response.status == 200)
        {
         login(response);
-         Swal.fire({
-            icon:"success",
-            title:"SUCCESSFULL!",
-            text:"SUCCESSFYLLY"
-         })
          if(step==1)
          {
             navigate(`/otp/${email}`)

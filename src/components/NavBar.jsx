@@ -31,11 +31,6 @@ function NavBar() {
        console.log(response)
        if(response.status==200)
        {
-        Swal.fire({
-          icon:"success",
-          title:"SUCCESSFULLY",
-          text:"LOGOUT"
-        })
         logout()
         localStorage.removeItem("passcode");
          console.log("AFTER REMOVE")

@@ -1,72 +1,96 @@
 /* Container */
 .booking-container {
-  padding: 30px;
-  background: #f4f6f9;
+  padding: 50px 20px;
+  background: linear-gradient(110deg, #d87171e0, #013C58);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  box-sizing: border-box;
 }
 
 /* Table wrapper */
 .booking-data {
   width: 100%;
   max-width: 1200px;
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   overflow-x: auto;
+  transition: 0.3s ease;
 }
 
 /* Table styling */
 .booking-data table {
   width: 100%;
   border-collapse: collapse;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 /* Table header */
 .booking-data thead {
-  background-color: #2c3e50;
-  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
 }
 
 .booking-data th {
-  padding: 14px 12px;
+  padding: 16px 14px;
   text-align: left;
   font-size: 14px;
-  letter-spacing: 0.5px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Table body */
 .booking-data td {
-  padding: 12px;
+  padding: 14px;
   font-size: 14px;
-  color: #333;
-  border-bottom: 1px solid #eaeaea;
+  color: #f5f5f5;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Row hover effect */
-.booking-data tbody tr:hover {
-  background-color: #f1f7ff;
-  transition: 0.3s ease;
-}
-
-/* Alternate row background */
+/* Zebra striping */
 .booking-data tbody tr:nth-child(even) {
-  background-color: #fafafa;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Hover effect */
+.booking-data tbody tr {
+  transition: all 0.3s ease;
+}
+
+.booking-data tbody tr:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+/* Scrollbar styling */
+.booking-data::-webkit-scrollbar {
+  height: 8px;
+}
+
+.booking-data::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .booking-data {
-    padding: 10px;
+    padding: 18px;
   }
 
   .booking-data th,
   .booking-data td {
-    font-size: 12px;
-    padding: 8px;
+    font-size: 13px;
+    padding: 10px;
   }
 }

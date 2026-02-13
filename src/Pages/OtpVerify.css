@@ -98,3 +98,13 @@
     transform: translateY(0);
   }
 }
+.btn-send
+{
+  height:20px;
+  width:118px;
+  border:transparent;
+  text-decoration:underline;
+  font-weight: bold;
+  color:red;
+  float: right;
+}

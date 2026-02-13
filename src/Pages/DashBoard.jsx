@@ -58,7 +58,7 @@ function DashBoard()
                        <h6 className="box2-datadata">BOOKING</h6>
                         </div>
                         <div className="box3">
-                            <img src="./faq.png"/>
+                            <img src="./images.png"/>
                             <h6 className="box3-data">{count?.faq || 0}</h6>
                              <h6 className="box3-datadata">FAQ</h6>
                           
