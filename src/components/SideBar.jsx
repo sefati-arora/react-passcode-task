@@ -62,8 +62,8 @@ function SideBar() {
       console.log(data);
       if (data !== "true") {
         Swal.fire({
-          icon: "error",
-          title: "ERROR!",
+          icon: "info",
+          title: "UNABLE TO ACCESS!",
           text: "YOU CAN'T ACCESS BOOKING!",
         });
         return;

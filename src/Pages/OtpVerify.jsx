@@ -110,9 +110,9 @@ function OtpVerify() {
               onChange={(e) => handleChange(e, 3)}
             />
           </div>
-          <button className="btn-send" onClick={resendOtp}>
+          <span className="btn-send" onClick={resendOtp}>
             Resend OTP
-          </button>
+          </span>
           <button className="btn-data" onClick={OtpData}>
             SUBMIT
           </button>
