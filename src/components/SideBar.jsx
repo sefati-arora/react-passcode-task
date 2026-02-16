@@ -26,10 +26,10 @@ function SideBar() {
       title: "ENTER PASSCODE",
       input: "password",
       inputPlaceholder: "ENTER PASSCODE",
-      showCancelButton:true,
+      showCancelButton: true,
       confirmButtonText: "submit",
-      cancelButtonText:"cancel",
-      cancelButtonColor:"rgb(219, 72, 72)"
+      cancelButtonText: "cancel",
+      cancelButtonColor: "rgb(219, 72, 72)",
     });
     const passCode = result.value;
     try {
@@ -45,7 +45,7 @@ function SideBar() {
       } else {
         Swal.fire({
           icon: "error",
-          text: "WRONG PASSCODE",
+          text: "Wrong PassCode",
         });
       }
     } catch (error) {

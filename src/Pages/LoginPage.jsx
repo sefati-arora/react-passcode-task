@@ -42,18 +42,20 @@ function LoginPage() {
         } else {
           navigate("/Dash");
         }
-      } else {
+      } 
+      else
+      {
         Swal.fire({
-          icon: "error",
-          title: "ERROR",
-          text: "ERROR!!!!",
-        });
+          icon:"error",
+          title:"ERROR",
+          text:"ERROR IN API"
+        })
       }
     } catch (error) {
       Swal.fire({
         icon: "error",
         title: "ERROR",
-        text: "ERROR",
+        text: "SERVER ERROR",
       });
     }
   };

@@ -64,7 +64,7 @@ function DashBoard() {
       } else {
         Swal.fire({
           icon: "error",
-          text: "ERROR",
+          text: "Wrong PassCode",
         });
       }
     } catch (error) {
@@ -82,7 +82,7 @@ function DashBoard() {
         Swal.fire({
           icon: "info",
           title: "ACCESS",
-          text: "You can't access user Profile without entering passcode!",
+          text: "You can't access Booking without entering passcode!",
         });
       } else {
         navigate("/booking");
