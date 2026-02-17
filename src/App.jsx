@@ -7,17 +7,19 @@ import OtpVerify from './Pages/OtpVerify';
 import DashBoard from './Pages/DashBoard';
 import UserProfile from './Pages/UserProfile';
 import BookingData from './Pages/BookingData';
+import UserView from './Pages/UserViewPage';
 function App()
 {
   return(
     <Routes>
       <Route path="/" element={<LoginPage/>}/>
-      <Route path="/pass" element={<PassCode/>}/>
       <Route path="/otp/:email" element={<OtpVerify/>}/>
       <Route element={<Layout/>}>
+      <Route path="/pass" element={<PassCode/>}/>
       <Route path="/Dash" element={<DashBoard/>}/>
       <Route path="/user" element={<UserProfile/>}/>
       <Route path="/booking" element={<BookingData/>}/>
+      <Route path="/user/view/:id" element={<UserView/>}/>
       </Route>
     </Routes>
   )

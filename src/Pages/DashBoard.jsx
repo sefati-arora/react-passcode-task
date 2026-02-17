@@ -80,9 +80,9 @@ function DashBoard() {
       const data = localStorage.getItem("passcode");
       if (data !== "true") {
         Swal.fire({
-          icon: "info",
-          title: "ACCESS",
-          text: "You can't access Booking without entering passcode!",
+           icon: "info",
+          title: "UNABLE TO ACCESS!",
+          text: "YOU CAN'T ACCESS BOOKING!",
         });
       } else {
         navigate("/booking");

@@ -39,17 +39,21 @@ function LoginPage() {
         login(response);
         if (step == 1) {
           navigate(`/otp/${email}`);
-        } else {
-          navigate("/Dash");
+        } 
+        else if(step == 2)
+        {
+          navigate('/Dash')
         }
-      } 
-      else
-      {
+        else
+        {
+          console.log("error")
+        }
+      } else {
         Swal.fire({
-          icon:"error",
-          title:"ERROR",
-          text:"ERROR IN API"
-        })
+          icon: "error",
+          title: "ERROR",
+          text: "ERROR IN API",
+        });
       }
     } catch (error) {
       Swal.fire({

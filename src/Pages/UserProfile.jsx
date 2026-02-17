@@ -3,9 +3,12 @@ import useApi from "../components/useApi";
 import ApiEndPoint from "../components/ApiEndPoint";
 import Swal from "sweetalert2";
 import "./UserProfile.css";
+import { Eye } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 function UserProfile() {
   const [user, setUser] = useState([]);
   const { postData } = useApi();
+  const navigate=useNavigate();
   const userData = async () => {
     try {
       const response = await postData(ApiEndPoint.userFetch);
@@ -41,6 +44,7 @@ function UserProfile() {
                 <th>email</th>
                 <th>phoneNumber</th>
                 <th>countryCode</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -51,6 +55,11 @@ function UserProfile() {
                   <td>{item.email}</td>
                   <td>{item.phoneNumber}</td>
                   <td>{item.countryCode}</td>
+                  <td>
+                    <button className="btn-action" onClick={() => navigate(`/user/view/${item.id}`)}>
+                      <Eye size={26}/>
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>

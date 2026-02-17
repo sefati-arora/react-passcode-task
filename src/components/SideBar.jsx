@@ -78,13 +78,38 @@ function SideBar() {
       });
     }
   };
+  const dashBoard=async()=>
+  {
+    try
+    {
+        const data=localStorage.getItem("passcode")
+        console.log(data)
+        if(data !== "true")
+        {
+          navigate('/Dash')
+        }
+        else
+        {
+          localStorage.removeItem("passcode")
+          navigate('/Dash')
+        }
+    }
+    catch(error)
+    {
+      Swal.fire({
+        icon:"error",
+        title:"error",
+        text:"SERVER ERROR"
+      })
+    }
+  }
   return (
     <>
       <div className="side-container">
         <ul>
-          <li>
+          <li onClick={dashBoard}>
             <LayoutDashboard size={18} />
-            <Link to="/Dash">DashBoard</Link>
+            DashBoard
           </li>
           <li onClick={userProfile}>
             <User size={18} />

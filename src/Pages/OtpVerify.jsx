@@ -51,7 +51,9 @@ function OtpVerify() {
           title: "SUCCESSFULLY!",
           text: "RESEND OTP!",
         });
-      } else {
+        
+      }
+      else{
         Swal.fire({
           icon: "error",
           title: "ERROR!",
