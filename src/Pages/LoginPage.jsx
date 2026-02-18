@@ -39,14 +39,11 @@ function LoginPage() {
         login(response);
         if (step == 1) {
           navigate(`/otp/${email}`);
-        } 
-        else if(step == 2)
-        {
-          navigate('/Dash')
-        }
-        else
-        {
-          console.log("error")
+        } else if (step == 2) {
+          sessionStorage.removeItem("passcode")
+          navigate("/Dash");
+        } else {
+          console.log("error");
         }
       } else {
         Swal.fire({

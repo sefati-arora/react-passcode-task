@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 function UserProfile() {
   const [user, setUser] = useState([]);
   const { postData } = useApi();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const userData = async () => {
     try {
       const response = await postData(ApiEndPoint.userFetch);
@@ -32,6 +32,30 @@ function UserProfile() {
   useEffect(() => {
     userData();
   }, []);
+  useEffect(()=>
+  {
+    const token=localStorage.getItem("token")
+    const passCode=sessionStorage.getItem("passcode")
+    if(!token)
+    {
+      Swal.fire({
+        icon:"error",
+        text:"Unable to access, login first"
+      })
+      navigate('/')
+      return;
+    }
+    if(passCode !== "true")
+    {
+       Swal.fire({
+              icon:"error",
+              title:"UNABLE",
+              text:"You can't able to access userProfile Directly!"
+            })
+      navigate("/Dash");
+      return;
+    }
+  },[navigate])
   return (
     <>
       <div className="user-container">
@@ -56,8 +80,11 @@ function UserProfile() {
                   <td>{item.phoneNumber}</td>
                   <td>{item.countryCode}</td>
                   <td>
-                    <button className="btn-action" onClick={() => navigate(`/user/view/${item.id}`)}>
-                      <Eye size={26}/>
+                    <button
+                      className="btn-action"
+                      onClick={() => navigate(`/user/view/${item.id}`)}
+                    >
+                      <Eye size={26} />
                     </button>
                   </td>
                 </tr>

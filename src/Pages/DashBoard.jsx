@@ -3,7 +3,7 @@ import useApi from "../components/useApi";
 import ApiEndPoint from "../components/ApiEndPoint";
 import Swal from "sweetalert2";
 import "./DashBoard.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function DashBoard() {
   const [count, setCount] = useState({});
   const { getData, postData } = useApi();
@@ -36,7 +36,7 @@ function DashBoard() {
     }
   };
   const userProfile = async () => {
-    const verifyData = localStorage.getItem("passcode");
+    const verifyData = sessionStorage.getItem("passcode");
     console.log(verifyData);
     if (verifyData == "true") {
       navigate("/user");
@@ -46,12 +46,12 @@ function DashBoard() {
       title: "ENTER PASSCODE",
       input: "password",
       inputPlaceholder: "ENTER PASSCODE",
-      showCancelButton:true,
+      showCancelButton: true,
       confirmButtonText: "submit",
       cancelButtonText: "cancel",
       cancelButtonColor: "rgb(224, 79, 79)",
     });
-    if(!result.isConfirmed) return;
+    if (!result.isConfirmed) return;
     const passCode = result.value;
     try {
       const response = await postData(ApiEndPoint.verifyPasscode, {
@@ -59,7 +59,7 @@ function DashBoard() {
       });
       console.log(response);
       if (response.status == 200) {
-        localStorage.setItem("passcode", "true");
+        sessionStorage.setItem("passcode", "true");
         navigate("/user");
       } else {
         Swal.fire({
@@ -77,10 +77,10 @@ function DashBoard() {
   };
   const booking = async () => {
     try {
-      const data = localStorage.getItem("passcode");
+      const data = sessionStorage.getItem("passcode");
       if (data !== "true") {
         Swal.fire({
-           icon: "info",
+          icon: "info",
           title: "UNABLE TO ACCESS!",
           text: "YOU CAN'T ACCESS BOOKING!",
         });

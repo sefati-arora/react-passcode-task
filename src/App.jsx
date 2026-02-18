@@ -8,6 +8,7 @@ import DashBoard from './Pages/DashBoard';
 import UserProfile from './Pages/UserProfile';
 import BookingData from './Pages/BookingData';
 import UserView from './Pages/UserViewPage';
+import OtpPage from './Pages/otpPage';
 function App()
 {
   return(
@@ -20,6 +21,7 @@ function App()
       <Route path="/user" element={<UserProfile/>}/>
       <Route path="/booking" element={<BookingData/>}/>
       <Route path="/user/view/:id" element={<UserView/>}/>
+      <Route path="/otpPage/:email" element={<OtpPage/>}/>
       </Route>
     </Routes>
   )

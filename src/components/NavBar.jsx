@@ -29,7 +29,7 @@ function NavBar() {
       console.log(response);
       if (response.status == 200) {
         logout();
-        localStorage.removeItem("passcode");
+        sessionStorage.removeItem("passcode");
         console.log("AFTER REMOVE");
         navigate("/");
       }

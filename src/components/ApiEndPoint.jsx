@@ -12,6 +12,7 @@ const ApiEndPoint=
      DashBoardData:`${API_BASE_URL}/api/DashBoardData`,
      verifyPasscode:`${API_BASE_URL}/api/verifyPasscode`,
      resendOtp:`${API_BASE_URL}/api/resendOtp`,
-     viewUser:`${API_BASE_URL}/api/viewUser`
+     viewUser:`${API_BASE_URL}/api/viewUser`,
+     deleteUser:`${API_BASE_URL}/api/deleteUser`
 }
 export default ApiEndPoint;

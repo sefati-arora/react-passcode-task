@@ -51,22 +51,21 @@ function PassCode() {
       }
       const response = await postData(ApiEndPoint.EditPasscode, data);
       console.log(response);
-      if(response.status==400)
-      {
+      if (response.status == 400) {
         Swal.fire({
-            icon:"info",
-            text:"CURRENT PASSCODE INVALID!"
-        })
+          icon: "info",
+          text: "CURRENT PASSCODE INVALID!",
+        });
       }
       if (response.status == 200) {
         const email = response.update.email;
         console.log(email);
-        navigate(`/otp/${email}`);
-        const passCodeData = localStorage.getItem("passcode");
+        navigate(`/otpPage/${email}`);
+        const passCodeData = sessionStorage.getItem("passcode");
         console.log(passCodeData);
         if (passCodeData == "true") {
-          localStorage.removeItem("passcode");
-          console.log("After remove:", localStorage.getItem("passcode"));
+          sessionStorage.removeItem("passcode");
+          console.log("After remove:", sessionStorage.getItem("passcode"));
         }
       }
     } catch (error) {

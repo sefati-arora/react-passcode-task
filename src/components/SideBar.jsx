@@ -17,7 +17,7 @@ function SideBar() {
   const navigate = useNavigate();
   const { postData } = useApi();
   const userProfile = async () => {
-    const verifiedData = localStorage.getItem("passcode");
+    const verifiedData = sessionStorage.getItem("passcode");
     if (verifiedData == "true") {
       navigate("/user");
       return;
@@ -40,7 +40,7 @@ function SideBar() {
       console.log(passCode);
       if (!passCode) return;
       if (response.status == 200) {
-        localStorage.setItem("passcode", "true");
+        sessionStorage.setItem("passcode", "true");
         navigate("/user");
       } else {
         Swal.fire({
@@ -58,7 +58,7 @@ function SideBar() {
   };
   const booking = async () => {
     try {
-      const data = localStorage.getItem("passcode");
+      const data = sessionStorage.getItem("passcode");
       console.log(data);
       if (data !== "true") {
         Swal.fire({
@@ -82,7 +82,7 @@ function SideBar() {
   {
     try
     {
-        const data=localStorage.getItem("passcode")
+        const data=sessionStorage.getItem("passcode")
         console.log(data)
         if(data !== "true")
         {
@@ -90,7 +90,7 @@ function SideBar() {
         }
         else
         {
-          localStorage.removeItem("passcode")
+          sessionStorage.removeItem("passcode")
           navigate('/Dash')
         }
     }
