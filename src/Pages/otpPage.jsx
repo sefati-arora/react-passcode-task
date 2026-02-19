@@ -24,7 +24,7 @@ function OtpPage() {
         Swal.fire({
           icon: "error",
           title: "ERROR",
-          text: "error in API",
+          text: "INVALID OTP",
         });
       }
     } catch (error) {
@@ -37,25 +37,27 @@ function OtpPage() {
   };
   const resendOtp = async () => {
     try {
-      const otpData = await postData(`${ApiEndPoint.otpVerify}/${email}`);
-      console.log(otpData);
-      if (response.status == 200) {
+      console.log(email);
+      const otpResend = await postData(`${ApiEndPoint.resendOtp}/${email}`);
+      console.log(otpResend);
+      if (otpResend.status == 200) {
         Swal.fire({
           icon: "success",
           title: "SUCCESSFULLY!",
-          text: "OTP SEND!",
+          text: "RESEND OTP!",
         });
       } else {
         Swal.fire({
           icon: "error",
-          text: "ERROR!!",
+          title: "ERROR!",
+          text: "error",
         });
       }
     } catch (error) {
       Swal.fire({
         icon: "error",
-        title: "ERROR",
-        text: "SERVER ERROR",
+        title: "ERROR!",
+        text: "SERVER ERROR!",
       });
     }
   };

@@ -95,6 +95,17 @@ function DashBoard() {
       });
     }
   };
+   const order=async()=>
+  {
+    try
+    {
+      alert("NO, the order hasn't been placed Yet!")
+    }
+    catch(error)
+    {
+      console.log(error)
+    }
+  }
   useEffect(() => {
     dashData();
   }, []);
@@ -117,7 +128,7 @@ function DashBoard() {
             <h6 className="box3-data">{count?.faq || 0}</h6>
             <h6 className="box3-datadata">FAQ</h6>
           </div>
-          <div className="box4">
+          <div className="box4" onClick={order}>
             <img src="./orderimage.png" />
             <h6 className="box4-data">{count?.order || 0}</h6>
             <h6 className="box4-datadata">ORDER's</h6>

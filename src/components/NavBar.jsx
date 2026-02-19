@@ -41,6 +41,21 @@ function NavBar() {
       });
     }
   };
+   const passcode=async()=>
+   {
+    const data=sessionStorage.getItem("passcode")
+    console.log(data)
+    if(data !== "true")
+    {
+      navigate('/pass')
+    }
+    else
+    {
+      sessionStorage.removeItem("passcode")
+      console.log("remove passCode after navigate passCode change")
+      navigate('/pass')
+    }
+   }
   return (
     <>
       <div className="nav-bar">
@@ -53,17 +68,19 @@ function NavBar() {
           <select
             className="select-row"
             onChange={(e) => {
-              if (e.target.value) {
-                navigate(e.target.value);
+              if (e.target.value == "pass") {
+                passcode();
+                return;
               }
               if (e.target.value == "logout") {
                 handleLogout();
+                return;
               }
             }}
           >
             <option value="">SELECT</option>
             <option value="logout">Logout</option>
-            <option value="/pass">PassCode Change</option>
+            <option value="pass">PassCode Change</option>
           </select>
         </label>
       </div>

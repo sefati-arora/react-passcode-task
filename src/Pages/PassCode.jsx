@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import {
   ShieldCheck,
@@ -61,12 +61,6 @@ function PassCode() {
         const email = response.update.email;
         console.log(email);
         navigate(`/otpPage/${email}`);
-        const passCodeData = sessionStorage.getItem("passcode");
-        console.log(passCodeData);
-        if (passCodeData == "true") {
-          sessionStorage.removeItem("passcode");
-          console.log("After remove:", sessionStorage.getItem("passcode"));
-        }
       }
     } catch (error) {
       Swal.fire({
@@ -80,11 +74,6 @@ function PassCode() {
     <>
       <div className="passcode-container">
         <div className="passcode-data">
-          <span className="arrow-left">
-            <Link to="/Dash">
-              <ArrowBigLeftDashIcon size={30} />
-            </Link>
-          </span>
           <div className="admin">
             <img src="./admin.png" />
           </div>

@@ -103,6 +103,28 @@ function SideBar() {
       })
     }
   }
+  const order=async()=>
+  {
+    try
+    {
+      alert("NO, the order hasn't been placed Yet!")
+    }
+    catch(error)
+    {
+      console.log(error)
+    }
+  }
+  const sub=async()=>
+  {
+    try
+    {
+      alert("No,the subscription hasn't been paid yet!")
+    }
+    catch(error)
+    {
+      console.log(error)
+    }
+  }
   return (
     <>
       <div className="side-container">
@@ -119,11 +141,11 @@ function SideBar() {
             <CalendarCheck size={18} />
             Booking
           </li>
-          <li>
+          <li onClick={sub}>
             <Repeat size={18} />
             Subscription
           </li>
-          <li>
+          <li onClick={order}>
             <ShoppingCart size={18} />
             Orders
           </li>
