@@ -1,11 +1,10 @@
-import { useState,useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useState} from "react";
+import { useNavigate} from "react-router-dom";
 import {
   ShieldCheck,
   LockKeyhole,
   KeyRound,
   CheckCircle2,
-  ArrowBigLeftDashIcon,
 } from "lucide-react";
 import useApi from "../components/useApi";
 import ApiEndPoint from "../components/ApiEndPoint";
