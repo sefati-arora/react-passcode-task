@@ -22,6 +22,7 @@ function NavBar() {
     });
     if (!result.isConfirmed) {
       navigate("/Dash");
+        window.location.reload();
       return;
     }
     try {
@@ -47,7 +48,9 @@ function NavBar() {
     console.log(data)
     if(data !== "true")
     {
+        
       navigate('/pass')
+      window.location.reload();
     }
     else
     {
@@ -70,11 +73,9 @@ function NavBar() {
             onChange={(e) => {
               if (e.target.value == "pass") {
                 passcode();
-                return;
               }
               if (e.target.value == "logout") {
                 handleLogout();
-                return;
               }
             }}
           >
