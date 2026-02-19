@@ -11,7 +11,6 @@ import "./Side.css";
 import Swal from "sweetalert2";
 import useApi from "../components/useApi";
 import ApiEndPoint from "../components/ApiEndPoint";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 function SideBar() {
   const navigate = useNavigate();
@@ -62,7 +61,7 @@ function SideBar() {
       console.log(data);
       if (data !== "true") {
         Swal.fire({
-          icon: "info",
+          icon: "warning",
           title: "UNABLE TO ACCESS!",
           text: "YOU CAN'T ACCESS BOOKING!",
         });
@@ -78,53 +77,38 @@ function SideBar() {
       });
     }
   };
-  const dashBoard=async()=>
-  {
-    try
-    {
-        const data=sessionStorage.getItem("passcode")
-        console.log(data)
-        if(data !== "true")
-        {
-          navigate('/Dash')
-        }
-        else
-        {
-          sessionStorage.removeItem("passcode")
-          navigate('/Dash')
-        }
-    }
-    catch(error)
-    {
+  const dashBoard = async () => {
+    try {
+      const data = sessionStorage.getItem("passcode");
+      console.log(data);
+      if (data !== "true") {
+        navigate("/Dash");
+      } else {
+        sessionStorage.removeItem("passcode");
+        navigate("/Dash");
+      }
+    } catch (error) {
       Swal.fire({
-        icon:"error",
-        title:"error",
-        text:"SERVER ERROR"
-      })
+        icon: "error",
+        title: "error",
+        text: "SERVER ERROR",
+      });
     }
-  }
-  const order=async()=>
-  {
-    try
-    {
-      alert("NO, the order hasn't been placed Yet!")
+  };
+  const order = async () => {
+    try {
+      alert("NO, the order hasn't been placed Yet!");
+    } catch (error) {
+      console.log(error);
     }
-    catch(error)
-    {
-      console.log(error)
+  };
+  const sub = async () => {
+    try {
+      alert("No,the subscription hasn't been paid yet!");
+    } catch (error) {
+      console.log(error);
     }
-  }
-  const sub=async()=>
-  {
-    try
-    {
-      alert("No,the subscription hasn't been paid yet!")
-    }
-    catch(error)
-    {
-      console.log(error)
-    }
-  }
+  };
   return (
     <>
       <div className="side-container">

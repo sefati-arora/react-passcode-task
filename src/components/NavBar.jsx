@@ -57,6 +57,7 @@ function NavBar() {
       sessionStorage.removeItem("passcode")
       console.log("remove passCode after navigate passCode change")
       navigate('/pass')
+         window.location.reload();
     }
    }
   return (

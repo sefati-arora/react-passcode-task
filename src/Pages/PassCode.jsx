@@ -43,7 +43,7 @@ function PassCode() {
       const data = { currentPassCode, newPassCode, confirmPassCode };
       if (data.newPassCode !== data.confirmPassCode) {
         Swal.fire({
-          icon: "info",
+         icon:"warning",
           title: "REQUIRED!",
           text: "NEW passcode and confirm PassCode must be similar",
         });
@@ -53,7 +53,7 @@ function PassCode() {
       console.log(response);
       if (response.status == 400) {
         Swal.fire({
-          icon: "info",
+         icon:"warning",
           text: "CURRENT PASSCODE INVALID!",
         });
       }

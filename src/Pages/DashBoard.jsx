@@ -80,7 +80,7 @@ function DashBoard() {
       const data = sessionStorage.getItem("passcode");
       if (data !== "true") {
         Swal.fire({
-          icon: "info",
+          icon: "warning",
           title: "UNABLE TO ACCESS!",
           text: "YOU CAN'T ACCESS BOOKING!",
         });
@@ -95,17 +95,13 @@ function DashBoard() {
       });
     }
   };
-   const order=async()=>
-  {
-    try
-    {
-      alert("NO, the order hasn't been placed Yet!")
+  const order = async () => {
+    try {
+      alert("NO, the order hasn't been placed Yet!");
+    } catch (error) {
+      console.log(error);
     }
-    catch(error)
-    {
-      console.log(error)
-    }
-  }
+  };
   useEffect(() => {
     dashData();
   }, []);
