@@ -22,7 +22,7 @@ function NavBar() {
     });
     if (!result.isConfirmed) {
       navigate("/Dash");
-        window.location.reload();
+      window.location.reload();
       return;
     }
     try {
@@ -42,24 +42,19 @@ function NavBar() {
       });
     }
   };
-   const passcode=async()=>
-   {
-    const data=sessionStorage.getItem("passcode")
-    console.log(data)
-    if(data !== "true")
-    {
-        
-      navigate('/pass')
+  const passcode = async () => {
+    const data = sessionStorage.getItem("passcode");
+    console.log(data);
+    if (data !== "true") {
+      navigate("/pass");
+      window.location.reload();
+    } else {
+      sessionStorage.removeItem("passcode");
+      console.log("remove passCode after navigate passCode change");
+      navigate("/pass");
       window.location.reload();
     }
-    else
-    {
-      sessionStorage.removeItem("passcode")
-      console.log("remove passCode after navigate passCode change")
-      navigate('/pass')
-         window.location.reload();
-    }
-   }
+  };
   return (
     <>
       <div className="nav-bar">
