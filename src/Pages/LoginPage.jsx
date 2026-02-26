@@ -33,6 +33,7 @@ function LoginPage() {
       const data = { email, password };
       const response = await postData(ApiEndPoint.adminLogin, data);
       console.log(response);
+      localStorage.setItem("userId", response.admin.id);
       const step = response.admin.step;
       console.log(step);
       if (response.status == 200) {

@@ -13,6 +13,7 @@ const ApiEndPoint=
      verifyPasscode:`${API_BASE_URL}/api/verifyPasscode`,
      resendOtp:`${API_BASE_URL}/api/resendOtp`,
      viewUser:`${API_BASE_URL}/api/viewUser`,
-     deleteUser:`${API_BASE_URL}/api/deleteUser`
+     deleteUser:`${API_BASE_URL}/api/deleteUser`,
+     statuUpdate:`${API_BASE_URL}/api/statuUpdate`
 }
 export default ApiEndPoint;

@@ -180,3 +180,12 @@
   text-decoration: none;
   color:black;
 }
+ .btn-update /* 1 means #29ab38  0 means #f14646e0 */
+{
+  border:none; 
+  color:rgb(220, 206, 206);
+  height:30px;
+  border-radius: 5px;
+  font-size: medium;
+  font-weight: bold;
+}
