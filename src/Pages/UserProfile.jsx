@@ -31,23 +31,24 @@ function UserProfile() {
       });
     }
   };
-const status = (id) => {
-  Socket.emit("status_update", { userId: id });
- Socket.emit("connect_data", {
-    message: "Hello from frontend",
-    receiverId:id,
-  });
-};
+  const status = (id) => {
+    try {
+      Socket.emit("status_update", { userId: id });
+      Socket.emit("connect_data", {
+        message: "Hello from frontend",
+        receiverId: id,
+      });
+      userData();
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
     const loggedInUserId = localStorage.getItem("userId");
     Socket.emit("connect_user", { userId: loggedInUserId });
     Socket.on("socket_listener", (data) => {
-    console.log("Message received:", data);
-    Swal.fire({
-      icon: "info",
-      text: data.message,
+      console.log("Message send:", data);
     });
-  });
     Socket.on("status_listener", (data) => {
       if (data.success_msg) {
         Swal.fire({
@@ -62,10 +63,10 @@ const status = (id) => {
         });
       }
     });
-   return () => {
-  Socket.off("socket_listener");
-  Socket.off("status_listener");
-};
+    return () => {
+      Socket.off("socket_listener");
+      Socket.off("status_listener");
+    };
   }, []);
   useEffect(() => {
     userData();
@@ -126,7 +127,7 @@ const status = (id) => {
                     >
                       status
                     </button>
-                  </td> 
+                  </td>
                   <td>
                     <button
                       className="btn-action"
